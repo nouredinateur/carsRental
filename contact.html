@@ -28,25 +28,57 @@
         </header>
     </div>
     <div class="contact">
-        <form>
+        <div class="form">
         <div class="contactinput">
             <label>Name</label>
-            <input type="text" placeholder="Enter your name">
+            <input id="name" value="" type="text" placeholder="Enter your name">
         </div>
         <div class="contactinput">
             <label>Email</label>
-            <input type="email" placeholder="Enter your email">
+            <input id="email" type="email" value="" placeholder="Enter your email">
         </div>
         <div class="contactinput">
             <label>Subject</label>
-            <input type="text" placeholder="Enter the subject">
+            <input id="subj" type="text"  value="" placeholder="Enter the subject">
         </div>
         <div class="contactinput">
             <label>Message</label>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea name="" id="msg" cols="30" rows="10"></textarea>
         </div>
-        <button>Submit</button>
-        </form>
+        <button onclick="showData()">Submit</button>
+    </div>
+    </div>
+    <div id="dataPopup">
+        <div>
+            <span>Name : </span>
+            <p ><strong id="enteredname"></strong></p>
+        </div>
+        <div>
+            <span>Email : </span>
+            <p id="enteredemail"><strong ></strong></p>
+        </div>
+        <div>
+            <span>Subject : </span>
+            <p id="enteredsubj"><strong ></strong></p>
+        </div>
+        <div>
+            <span>Message : </span>
+            <p id="enteredmsg"><strong ></strong></p>
+        </div>
     </div>
 </body>
+<script>
+    
+    function showData(){
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var subj = document.getElementById('subj').value;
+        var msg = document.getElementById('msg').value;
+        document.getElementById('dataPopup').style.display = "block";
+        document.getElementById("enteredname").innerHTML = name;
+        document.getElementById("enteredemail").innerHTML = email;
+        document.getElementById("enteredsubj").innerHTML = subj;
+        document.getElementById("enteredmsg").innerHTML = msg;
+    }
+</script>
 </html>
