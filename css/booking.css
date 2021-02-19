@@ -1,0 +1,32 @@
+*{
+    padding:0;
+    margin:0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap');
+
+.tabs{
+    width:100%;
+    height:500px;
+    background-color: rgba(128, 128, 128, 0.164);
+    padding-top: 100px;
+    display: flex;
+}
+.tab{
+    width:350px;
+    height:250px;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 1px grey;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    padding-top: 50px;
+}
+.tab img{
+    width:150px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.tab p {
+    text-align: center;
+    font-size: 26px;
+}

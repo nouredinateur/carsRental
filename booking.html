@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/booking.css">
+    <title>Booking</title>
+</head>
+<body>
+<script src="data1.js"></script>
+<script>
+    // function vehicles(typeV){
+    //     // const select = document.getElemnetById('select');
+    //     const selectType = document.getElementById('selectType').value;
+    //     var optionO = "<option>";
+    //     var optionE = "</option>";
+    //     for(var i = 0; i < type[selectType].length; i++){
+    //         alert(type[i]);
+    //     }
+
+    // }
+    // function closest(){
+    //     var element = document.getElementById('elm');
+    //     var closest = element.closest(".tab");
+    //     if(closest){
+    //         closest.style.border = "6px solid red"
+    //     }
+    // }
+        function clickShow() {
+            var div = document.getElementById(this).value;
+            // var value = div.closest('tab').value;
+            // document.getElementsByClassName('tab').click();
+            console.log(div)
+        }
+</script>
+<div>
+    <div id="elm" class="tabs">
+        <button onclick="vehicles()">RUN</button>
+        <div id="tab" value="Moto" onclick="clickShow()" class="tab">
+            <img src="img/moto.png">
+            <p><strong>Moto</strong></p>
+            <input value="Moto" type="hidden">
+            <select></select>
+        </div>
+        <div id="tab" class="tab">
+            <img src="img/citadine.png">
+            <p><strong>Citadine</strong></p>
+            <input value="Citadine" type="hidden">
+            <select></select>
+        </div>
+        <div id="tab" class="tab">
+            <img src="img/compact.png">
+            <p><strong>Compact</strong></p>
+            <input value="Compact" type="hidden">
+            <select></select>
+        </div>
+        <div id="tab" class="tab">
+            <img src="img/berline.png">
+            <p><strong>Berline</strong></p>
+            <input value="Berline" type="hidden">
+            <select></select>
+        </div>
+        <div id="tab" class="tab">
+            <img src="img/util.png">
+            <p><strong>Utilitaire</strong></p>
+            <input value="Utilitaire" type="hidden">
+            <select></select>
+        </div>
+        <div id="tab" class="tab">
+            <img src="img/trax.png">
+            <p><strong>Engin de Chantier</strong></p>
+            <input value="Engin de Chantier" type="hidden">
+            <select></select>
+        </div>
+        <div id="tab" class="tab">
+            <img src="img/truck.png">
+            <p><strong>Camion</strong></p>
+            <input value="Camion" type="hidden">
+            <select></select>
+        </div>
+    </div>
+    <div>
+        <select id="selectType">
+            <option>Moto</option>
+            <option>Citadine</option>
+            <option>Compact</option>
+            <option>Berline</option>
+            <option>Utilitaire</option>
+            <option>Engin de Chantier</option>
+            <option>Camion</option>
+        </select>
+    </div>
+    <section>
+        <div>
+
+        </div>
+    </section>
+</div>
+</body>
+</html>
