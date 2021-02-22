@@ -10,22 +10,52 @@
 </head>
 <body>
     <div class="upperSection">
+        <div class="hamMenu">
+            <div  onclick="showMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
         <header class="nav">
             <div id="logo">
                 <h2>Vroom</h2>
             </div>
             <div>
                 <ul>
-                    <a href="index.html"><li>Home</li></a>
-                    <a href="gallery.html"><li>Gallery</li></a>
-                    <a href="booking.html"><li>Booking</li></a>
-                    <a href="contact.html"><li>Contact</li></a>
+                    <a id="a" href="index.html"><li>Home</li></a>
+                    <a id="a" href="gallery.html"><li>Gallery</li></a>
+                    <a id="a" href="booking.html"><li>Booking</li></a>
+                    <a id="a" href="contact.html"><li>Contact</li></a>
                 </ul>
             </div>
             <div>
                 <h4>Central 24h 0800 606 86 </h4>
             </div>
         </header>
+    </div>
+    <div id="mobileMenu">
+        <div class="hamMenu">
+            <div  onclick="showMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <div id="menuSection" class="upperSection">
+            <header id="nav" class="nav">
+                <div id="logo2">
+                    <h2>Vroom</h2>
+                </div>
+                <div id="menuUl">
+                    <ul>
+                        <li>Home</li>
+                        <li>Gallery</li>
+                        <li>Booking</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Central 24h 0800 606 86 </h4>
+                </div>
+            </header>
+        </div>
     </div>
     <div class="contact">
      
@@ -55,27 +85,36 @@
     </div>
     
     </div>
-    <div id="dataPopup">
-        <div>
-            <span>Hello </span>
-            <p><strong id="enteredname"></strong></p>
-        </div>
-        <div>
-            <span>Email : </span>
-            <p id="enteredemail"><strong ></strong></p>
-        </div>
-        <div>
-            <span>Subject : </span>
-            <p id="enteredsubj"><strong ></strong></p>
-        </div>
-        <div>
-            <span>Message : </span>
-            <p id="enteredmsg"><strong ></strong></p>
-        </div>
-        <div>
-            <button>Confirm</button>
+    <div class="hol">   
+        <div id="dataPopup">
+            <div id="hi">
+                <span>Hello </span>
+                <p><strong id="enteredname"></strong></p>
+            </div>
+            <div>
+                <span>Email : </span>
+                <p id="enteredemail"><strong ></strong></p>
+            </div>
+            <div>
+                <span>Subject : </span>
+                <p id="enteredsubj"><strong ></strong></p>
+            </div>
+            <div>
+                <span>Message : </span><br>
+                <textarea name="" id="enteredmsg" cols="30" rows="10"></textarea>
+            </div>
+            <div id="btn">
+                <a href="contact.html">
+                    <button>Send</button>
+                </a>
+            </div>
         </div>
     </div>
+    
+    <div style="height: 700px;"></div>
+    <footer>
+        <p>Copyright Youcode 2021</p>
+    </footer>
 </body>
 <script>
     function validate(){
@@ -121,8 +160,11 @@
         }else{
             msg.style.border = "3px solid red"
         }
-        if(validCount = 4){
+        if(validCount == 4){
             showData();
+            document.getElementById('dataPopup').style.display = "block";
+        }else{
+            document.getElementById('dataPopup').style.display = "none";
         }
     }
     function showData(){
@@ -130,11 +172,12 @@
         var email = document.getElementById('email').value;
         var subj = document.getElementById('subj').value;
         var msg = document.getElementById('msg').value;
-        document.getElementById('dataPopup').style.display = "block";
         document.getElementById("enteredname").innerHTML = name;
         document.getElementById("enteredemail").innerHTML = email;
         document.getElementById("enteredsubj").innerHTML = subj;
         document.getElementById("enteredmsg").innerHTML = msg;
     }
 </script>
+<script src="script/hamMenu.js"></script>
+<script src="https://kit.fontawesome.com/21917d46d7.js" crossorigin="anonymous"></script>
 </html>

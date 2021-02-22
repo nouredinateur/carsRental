@@ -47,17 +47,20 @@ button {
 }
 
 #dataPopup{
-    display:block;
-    width:800px;
+    display:none;
+    width:50%;
     height: 500px;
     max-height: 100%;
     background-color: white;
     position: absolute;
     top:400px;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 25%;
+    margin-right: 25%;
     color:black;
     box-shadow: 0px 0px 3px grey; 
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+
 }
 #dataPopup div span{
     font-size: 22px;
@@ -68,4 +71,34 @@ button:hover{
     background-color: white;
     color:black;
     font-weight: 600;
+}
+#mobileMenu{
+    z-index: 1;
+}
+.hol{
+    width:100%;
+}
+#hi{
+    margin-top: 50px;
+}
+#btn a{
+    margin: 0;
+}
+@media only screen and (max-width: 1024px){
+    input{
+        width:100%;
+    }
+    .contact{
+        height:700px;
+    }
+    #dataPopup div span{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    #enteredmsg{
+        width:100px;
+    }
+    #enteredsubj{
+        font-size: 10px;
+    }
 }

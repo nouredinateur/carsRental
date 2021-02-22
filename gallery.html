@@ -4,9 +4,97 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GALLERY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gallery</title>
 </head>
+<style>
+    .grid { 
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 20px;
+        align-items: stretch;
+    }
+    .grid img {
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+        max-width: 100%;
+    }
+    .gallery{
+       margin-top:300px;
+       margin-left: 20%;
+       margin-right: 20%;
+    }
+    .grid img:hover{
+        width:300px;
+        transition: 1s;
+    }
+    @media only screen and (max-width: 1024px){
+        footer{
+            margin-top: 1250px;
+        }
+    }
+    @media only screen and (max-width: 500px){
+        footer{
+            margin-top: 2250px;
+        }
+    }
+</style>
 <body>
-    
-</body>
-</html>
+    <div class="upperSection">
+        <div class="hamMenu">
+            <div  onclick="showMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <header class="nav">
+            <div id="logo">
+                <h2>Vroom</h2>
+            </div>
+            <div>
+                <ul>
+                    <a href="index.html"><li>Home</li></a>
+                    <a href="gallery.html"><li>Gallery</li></a>
+                    <a href="booking.html"><li>Booking</li></a>
+                    <a href="contact.html"><li>Contact</li></a>
+                </ul>
+            </div>
+            <div>
+                <h4>Central 24h 0800 606 86 </h4>
+            </div>
+        </header>
+        <div class="gallery">
+            <main class="grid">
+                <img src="img/car1.jpg" alt="Sample photo">
+                <img src="img/car2.jpg" alt="Sample photo">
+                <img src="img/car3.jpg" alt="Sample photo">
+                <img src="img/car4.jpg" alt="Sample photo">
+                <img src="img/car5.jpg" alt="Sample photo">
+                <img src="img/car6.jpg" alt="Sample photo">
+                <img src="img/car1.jpg" alt="Sample photo">
+                <img src="img/car2.jpg" alt="Sample photo">
+                <img src="img/car3.jpg" alt="Sample photo">
+                <img src="img/car4.jpg" alt="Sample photo">
+                <img src="img/car4.jpg" alt="Sample photo">
+                <img src="img/car5.jpg" alt="Sample photo">
+                <img src="img/car6.jpg" alt="Sample photo">
+                <img src="img/car5.jpg" alt="Sample photo">
+                <img src="img/car6.jpg" alt="Sample photo">
+                <img src="img/car4.jpg" alt="Sample photo">
+                <img src="img/car5.jpg" alt="Sample photo">
+                <img src="img/car6.jpg" alt="Sample photo">
+                <img src="img/car1.jpg" alt="Sample photo">
+                <img src="img/car2.jpg" alt="Sample photo">
+              </main>
+        </div>
+    </div>
+
+    <div style="height:500px;">
+
+    </div>
+    <footer>
+        <p>Copyright Youcode 2021</p>
+    </footer>
+    </body>
+    <script src="https://kit.fontawesome.com/21917d46d7.js" crossorigin="anonymous"></script>
+    <script src="script/hamMenu.js"></script>
+    </html>

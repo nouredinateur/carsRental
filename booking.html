@@ -5,97 +5,183 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Booking</title>
 </head>
 <body>
 <script src="data1.js"></script>
 <script>
-    // function vehicles(typeV){
-    //     // const select = document.getElemnetById('select');
-    //     const selectType = document.getElementById('selectType').value;
-    //     var optionO = "<option>";
-    //     var optionE = "</option>";
-    //     for(var i = 0; i < type[selectType].length; i++){
-    //         alert(type[i]);
-    //     }
-
-    // }
-    // function closest(){
-    //     var element = document.getElementById('elm');
-    //     var closest = element.closest(".tab");
-    //     if(closest){
-    //         closest.style.border = "6px solid red"
-    //     }
-    // }
-        function clickShow() {
-            var div = document.getElementById(this).value;
-            // var value = div.closest('tab').value;
-            // document.getElementsByClassName('tab').click();
-            console.log(div)
+        function clickShow(value) {
+            document.getElementById('section').style.display = "block"
+            var selectedDiv = value;
+            var optionO = "<option>";
+            var optionE = "</option>";
+            var options = "<option disabled>Chose</option>";
+            for(var i = 0; i < type[value]["carburant"].length;i++){
+              options = options+"<option value='"+type[value]["carburant"][i]+"'>"+type[value]["carburant"][i]+"</option>";
+            }
+            console.log(options)
+            document.getElementById("typeCarburant").innerHTML= options;
+            document.getElementById("bv").style.display= "block";
+            document.getElementById("boit").innerHTML = type[value]["boit"];
+            document.getElementById('prix').innerHTML = type[value]["prix"];
+        }
+        function calculate(){
+            var per ={
+                Electrique:0.34,
+                Hybride:0.9,
+                Essance:0.12, 
+                Diesel:0.21
+            };
+            var bv = {
+                none : 0,
+                Manuelle : 0,
+                Automatique: 0.19,
+            };
+            var price = document.getElementById('prix').innerText;
+            var Carburant = document.getElementById('typeCarburant').value;
+            var perCarburant = per[Carburant];
+            var boit = document.getElementById('boit').innerText;
+            var perBoit = bv[boit];
+            var Day = document.getElementById('days').value;
+            var calcul = price + perCarburant + perBoit * Day;
+            var total = document.getElementById('total');
+            total.innerText = calcul;
+            console.log(calcul)
         }
 </script>
-<div>
-    <div id="elm" class="tabs">
-        <button onclick="vehicles()">RUN</button>
-        <div id="tab" value="Moto" onclick="clickShow()" class="tab">
-            <img src="img/moto.png">
-            <p><strong>Moto</strong></p>
-            <input value="Moto" type="hidden">
-            <select></select>
-        </div>
-        <div id="tab" class="tab">
-            <img src="img/citadine.png">
-            <p><strong>Citadine</strong></p>
-            <input value="Citadine" type="hidden">
-            <select></select>
-        </div>
-        <div id="tab" class="tab">
-            <img src="img/compact.png">
-            <p><strong>Compact</strong></p>
-            <input value="Compact" type="hidden">
-            <select></select>
-        </div>
-        <div id="tab" class="tab">
-            <img src="img/berline.png">
-            <p><strong>Berline</strong></p>
-            <input value="Berline" type="hidden">
-            <select></select>
-        </div>
-        <div id="tab" class="tab">
-            <img src="img/util.png">
-            <p><strong>Utilitaire</strong></p>
-            <input value="Utilitaire" type="hidden">
-            <select></select>
-        </div>
-        <div id="tab" class="tab">
-            <img src="img/trax.png">
-            <p><strong>Engin de Chantier</strong></p>
-            <input value="Engin de Chantier" type="hidden">
-            <select></select>
-        </div>
-        <div id="tab" class="tab">
-            <img src="img/truck.png">
-            <p><strong>Camion</strong></p>
-            <input value="Camion" type="hidden">
-            <select></select>
+<div class="upperSection">
+    <div class="hamMenu">
+        <div  onclick="showMenu()">
+            <i class="fas fa-bars"></i>
         </div>
     </div>
-    <div>
-        <select id="selectType">
-            <option>Moto</option>
-            <option>Citadine</option>
-            <option>Compact</option>
-            <option>Berline</option>
-            <option>Utilitaire</option>
-            <option>Engin de Chantier</option>
-            <option>Camion</option>
-        </select>
-    </div>
-    <section>
+    <header class="nav">
+        <div id="logo">
+            <h2>Vroom</h2>
+        </div>
         <div>
+            <ul>
+                <a href="index.html"><li>Home</li></a>
+                <a href="gallery.html"><li>Gallery</li></a>
+                <a href="booking.html"><li>Booking</li></a>
+                <a href="contact.html"><li>Contact</li></a>
+            </ul>
+        </div>
+        <div>
+            <h4>Central 24h 0800 606 86 </h4>
+        </div>
+    </header>
 
+    <div id="elm" class="tabs">
+        <div id="flex">
+            <div id="Moto"  onclick="clickShow(this.id)" class="tab">
+                <img src="img/moto.png">
+                <p><strong>Moto</strong></p>
+                <input value="Moto" type="hidden">
+            </div>
+            <div id="Citadine" class="tab" onclick="clickShow(this.id)">
+                <img src="img/citadine.png">
+                <p><strong>Citadine</strong></p>
+                <input value="Citadine" type="hidden">
+            </div>
+        </div>
+       <div id="flex">
+            <div id="Compact" class="tab" onclick="clickShow(this.id)">
+                <img src="img/compact.png">
+                <p><strong>Compact</strong></p>
+                <input value="Compact" type="hidden">
+            </div>
+            <div id="Berline" class="tab" onclick="clickShow(this.id)">
+                <img src="img/berline.png">
+                <p><strong>Berline</strong></p>
+                <input value="Berline" type="hidden">
+            </div>
+       </div>
+        <div id="flex">
+            <div id="Utilitaire" class="tab" onclick="clickShow(this.id)">
+                <img src="img/util.png">
+                <p><strong>Utilitaire</strong></p>
+                <input value="Utilitaire" type="hidden">
+            </div>
+            <div id="Engin de Chantier" class="tab" onclick="clickShow(this.id)">
+                <img src="img/trax.png">
+                <p><strong>Engin de Chantier</strong></p>
+                <input value="Engin de Chantier" type="hidden">
+            </div>
+        </div>
+        <div id="flex">
+            <div id="Camion" class="tab" onclick="clickShow(this.id)">
+                <img src="img/truck.png">
+                <p><strong>Camion</strong></p>
+                <input value="Camion" type="hidden">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="mobileMenu">
+    <div class="hamMenu">
+        <div  onclick="showMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <div id="menuSection" class="upperSection">
+        <header id="nav" class="nav">
+            <div id="logo2">
+                <h2>Vroom</h2>
+            </div>
+            <div id="menuUl">
+                <ul>
+                    <li>Home</li>
+                    <li>Gallery</li>
+                    <li>Booking</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Central 24h 0800 606 86 </h4>
+            </div>
+        </header>
+    </div>
+</div>
+<div>
+    <section id="section" class="calculate">
+        <div class="calTab">
+            <div>
+                <div id="tdc">
+                    <i class="fas fa-gas-pump"></i>
+                    <h4 id="">Type du carburant</h4>
+                    <select id="typeCarburant">
+                        <option></option>
+                    </select>
+                </div>
+                <div id="bv">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h4>type de boite à vitesse :</h4>
+                    <p id="boit"></p>
+                </div>
+                <div id="price">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h4>Price Per day :</h4>
+                    <span><p id="prix"></p>€</span>
+                </div>
+                <div>
+                    <label for="">Number of days</label>
+                    <input type="number" id="days" value="0">
+                </div>
+                <button onclick="calculate()">Calculate</button>
+                <p>Total: <p id="total"></p></p>
+            </div>
         </div>
     </section>
 </div>
+<div style="width:200px;">
+
+</div>
+<footer>
+    <p>Copyright Youcode 2021</p>
+</footer>
 </body>
+<script src="https://kit.fontawesome.com/21917d46d7.js" crossorigin="anonymous"></script>
+<script src="script/hamMenu.js"></script>
 </html>

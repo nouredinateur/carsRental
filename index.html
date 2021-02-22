@@ -9,6 +9,11 @@
 </head>
 <body>
     <div class="upperSection">
+        <div class="hamMenu">
+            <div  onclick="showMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
         <header class="nav">
             <div id="logo">
                 <h2>Vroom</h2>
@@ -27,7 +32,6 @@
         </header>
         <div class="slideFrame">
             <div class="slideButton">
-                <i class="far fa-arrow-alt-circle-left"></i>
             </div>
             <div class="slide">
                 <div class="intro">
@@ -39,17 +43,21 @@
                 </div>
             </div>
             <div class="slideButton">
-                <i class="far fa-arrow-alt-circle-right"></i>
             </div>
         </div>
     </div>
-    <div class="mobileMenu">
-        <div class="upperSection">
-            <header class="nav">
-                <div id="logo">
+    <div id="mobileMenu">
+        <div class="hamMenu">
+            <div  onclick="showMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <div id="menuSection" class="upperSection">
+            <header id="nav" class="nav">
+                <div id="logo2">
                     <h2>Vroom</h2>
                 </div>
-                <div>
+                <div id="menuUl">
                     <ul>
                         <li>Home</li>
                         <li>Gallery</li>
@@ -63,6 +71,40 @@
             </header>
         </div>
     </div>
+    <div class="pad">
+        <a href="gallery.html">
+            <div class="card">
+                <i class="fas fa-images"></i>
+                <h3>Gallery</h3>
+            </div>
+        </a>
+        <a href="contact.html">
+            <div class="card">
+                <i class="fas fa-file-signature"></i>
+                <h3>Contact</h3>
+            </div>
+        </a>
+        <a href="booking.html">
+            <div class="card">
+                <i class="fas fa-images"></i>
+                <h3>Booking</h3>
+            </div>
+        </a>
+    </div>
+
+    <footer>
+        <p>Copyright Youcode 2021</p>
+    </footer>
 </body>
 <script src="https://kit.fontawesome.com/21917d46d7.js" crossorigin="anonymous"></script>
+<script src="script/hamMenu.js">
+    function showMenu() {
+    var menuDropdown = document.getElementsByClassName("mobileMenu");
+    if (menuDropdown.style.display === "none") {
+      menuDropdown.style.display = "block";
+    } else {
+      menuDropdown.style.display = "none";
+    }
+  }
+</script>
 </html>
