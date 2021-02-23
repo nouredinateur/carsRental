@@ -44,7 +44,7 @@
             var boit = document.getElementById('boit').innerText;
             var perBoit = bv[boit];
             var Day = document.getElementById('days').value;
-            var calcul = price + perCarburant + perBoit * Day;
+            var calcul =(price + perCarburant + perBoit) * Day;
             var total = document.getElementById('total');
             total.innerText = calcul;
             console.log(calcul)
@@ -178,7 +178,7 @@
 <div style="width:200px;">
 
 </div>
-<footer>
+<footer style="margin-top: 200px;">
     <p>Copyright Youcode 2021</p>
 </footer>
 </body>
